@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mój Kalkulator</title>
+</head>
+<body>
+  <h1>Nauka i mój prosty kalkulator</h1>
+  <input type="text" id="display" readonly>
+  <div>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button onclick="clearDisplay()">C</button>
+  </div>
+  <div>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button>
+    <button onclick="operate('+')">+</button>
+  </div>
+  <div>
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button>
+    <button onclick="operate('-')">-</button>
+  </div>
+  <div>
+    <button onclick="appendToDisplay('0')">0</button>
+    <button onclick="appendToDisplay('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="operate('*')">*</button>
+  </div>
+  <div>
+    <button onclick="operate('/')">/</button>
+  </div>
+  <script>
+    let displayValue = '';
+    let currentOperator = '';
+    let firstOperand = null;
+
+    function appendToDisplay(value) {
+      displayValue += value;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      document.getElementById('display').value = displayValue;
+    }
+
+    function clearDisplay() {
+      displayValue = '';
+      updateDisplay();
+    }
+
+    function operate(operator) {
+      if (firstOperand === null) {
+        firstOperand = parseFloat(displayValue);
+        currentOperator = operator;
+        clearDisplay();
+      } else {
+        const secondOperand = parseFloat(displayValue);
+        switch (currentOperator) {
+          case '+':
+            firstOperand += secondOperand;
+            break;
+          case '-':
+            firstOperand -= secondOperand;
+            break;
+          case '*':
+            firstOperand *= secondOperand;
+            break;
+          case '/':
+            firstOperand /= secondOperand;
+            break;
+        }
+        currentOperator = operator;
+        displayValue = '';
+        updateDisplay();
+      }
+    }
+
+    function calculate() {
+      if (currentOperator && displayValue !== '') {
+        operate(currentOperator);
+        currentOperator = '';
+        displayValue = firstOperand.toString();
+        firstOperand = null;
+        updateDisplay();
+      }
+    }
+  </script>
+</body>
+</html>
