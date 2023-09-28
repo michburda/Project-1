@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ROLL A DICE !</title>
+</head>
+<style>
+    
+    body {
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #f01313;
+    }
+    
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+   
+  </style>
+<body>
+  <h1>Gra w rzut kostką</h1>
+  <p>Wynik rzutu: <span id="result"></span></p>
+  <button onclick="rollDice()">Rzuć kostką piracie!</button>
+ 
+
+  <script>
+    function rollDice() {
+          const result = Math.floor(Math.random() * 6) + 1;
+          const resultElement = document.getElementById('result');
+      resultElement.textContent = result;
+    }
+    
+    if (result < 5) {
+        alert('Słaby z Ciebie pirat wariacie!');
+    }
+  </script>
+
+</body>
+</html>
