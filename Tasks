@@ -1,0 +1,13 @@
+Ćwiczenie 1: Dynamiczna Lista Zakupów
+Stwórz prostą stronę HTML z polem tekstowym, przyciskiem "Dodaj" i pustą listą (<ul>).
+Napisz funkcję JavaScript, która będzie reagować na kliknięcie przycisku "Dodaj", pobierać tekst z pola tekstowego i dodawać nowy element (<li>) do listy z wprowadzonym tekstem.
+Zainicjuj tablicę JavaScript, która będzie przechowywać wszystkie elementy listy, i aktualizuj ją za każdym razem, gdy dodany zostanie nowy element.
+
+
+Ćwiczenie 2: Prosty Kalkulator Statystyk
+Stwórz prosty formularz, który pozwala użytkownikom na wprowadzenie zestawu liczb (możesz użyć pola tekstowego lub kilku pól tekstowych).
+Napisz funkcję, która zbiera liczby z formularza, umieszcza je w tablicy, a następnie oblicza i wyświetla ich średnią i medianę na stronie.
+Wyświetl wynik na stronie
+
+
+Jeżeli czegoś nie będziesz wiedział, postaraj się proszę znaleźć rozwiązanie samodzielnie w google. Jeżeli to nie pomoże pytaj śmiało
