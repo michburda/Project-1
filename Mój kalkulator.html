@@ -6,6 +6,7 @@
 <body>
   <h1>Nauka i mój prosty kalkulator</h1>
   <input type="text" id="display" readonly>
+  // move every onclick listener to the js file
   <div>
     <button onclick="appendToDisplay('7')">7</button>
     <button onclick="appendToDisplay('8')">8</button>
@@ -33,6 +34,7 @@
   <div>
     <button onclick="operate('/')">/</button>
   </div>
+  //extract <script> node and move it to the separate file 
   <script>
     let displayValue = '';
     let currentOperator = '';
@@ -44,16 +46,20 @@
     }
 
     function updateDisplay() {
+      // if you have to use the same assignment then assign it to a variable once and use the variable. it saves resources
       document.getElementById('display').value = displayValue;
     }
 
     function clearDisplay() {
+      // usually the "clear button" clears all the data that user entered. try to find the bug 
       displayValue = '';
       updateDisplay();
     }
 
     function operate(operator) {
+      // this is the same as just if(!firstOperand)
       if (firstOperand === null) {
+        // you can cast a string to an int/float using "+" as prefix e.g. +displayValue instead of using praseInt/parseFloat
         firstOperand = parseFloat(displayValue);
         currentOperator = operator;
         clearDisplay();
@@ -79,6 +85,7 @@
       }
     }
 
+    // test your application and try to find a bug. when you find it, please notify me 
     function calculate() {
       if (currentOperator && displayValue !== '') {
         operate(currentOperator);
