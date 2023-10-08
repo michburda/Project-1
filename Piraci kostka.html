@@ -29,10 +29,12 @@
   <script>
     function rollDice() {
           const result = Math.floor(Math.random() * 6) + 1;
+      // if you have to use the same assignment then assign it to a variable once and use the variable. it saves resources
           const resultElement = document.getElementById('result');
       resultElement.textContent = result;
     }
-    
+
+    // test your application and try to find a bug. once you find it, please notify me
     if (result < 5) {
         alert('Słaby z Ciebie pirat wariacie!');
     }
