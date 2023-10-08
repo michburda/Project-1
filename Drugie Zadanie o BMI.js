@@ -4,6 +4,7 @@ const heightMark = 1.69;
 const massJohn = 92; 
 const heightJohn = 1.95; 
 
+// create a function that will calculate BMI ratio and another function to return a result ( who has higher bmi )
 const BMIMark = massMark / (heightMark * heightMark);
 const BMIJohn = massJohn / (heightJohn * heightJohn);
 
