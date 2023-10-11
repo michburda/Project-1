@@ -1,0 +1,21 @@
+<body>
+  <h1>Gra w rzut kostką</h1>
+  <p>Wynik rzutu: <span id="result"></span></p>
+  <button class="roll">Rzuć kostką piracie!</button>
+
+  <script>
+    const button = document.querySelector(".roll");
+    const resultElement = document.getElementById('result');
+    
+    button.addEventListener("click", rollDice)
+
+    function rollDice() {
+      const result = Math.floor(Math.random() * 6) + 1;
+      resultElement.textContent = result;
+
+      if (result < 5) {
+        alert('Słaby z Ciebie pirat wariacie!');
+      }
+    }
+  </script>
+</body>
